@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    'lightUpPiano'
 ]
 
 MIDDLEWARE = [
@@ -86,6 +88,12 @@ DATABASES = {
         'PASSWORD': os.environ["PGPASSWORD"],
         'HOST': os.environ["PGHOST"],
         'PORT': os.environ["PGPORT"],
+        # 'ENGINE': 'django.db.backends.postgresql',
+        # 'NAME': 'LightUpPiano', 
+        # 'USER': 'postgres',
+        # 'PASSWORD': 'Chaeastone1917',
+        # 'HOST': 'localhost', 
+        # 'PORT': '5432',
     }
 }
 
