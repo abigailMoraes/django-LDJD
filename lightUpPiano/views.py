@@ -34,7 +34,7 @@ def play_music(request):
     file_path = './static/music/happy_birthday.mid'
     sio = socketio.Client()
     pygame.midi.init()
-    sio.connect('https://http-nodejs-production-4455.up.railway.app:6060')
+    sio.connect('https://http-nodejs-production-4455.up.railway.app')
     player = pygame.midi.Output(0)
     player.set_instrument(48, 1)
     mid = mido.MidiFile(file_path, clip=True)
