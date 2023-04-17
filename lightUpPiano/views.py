@@ -35,8 +35,8 @@ def play_music(request):
     sio = socketio.Client()
     pygame.midi.init()
     sio.connect('https://http-nodejs-production-4455.up.railway.app')
-    player = pygame.midi.Output(0)
-    player.set_instrument(48, 1)
+    #player = pygame.midi.Output(0)
+    #player.set_instrument(48, 1)
     mid = mido.MidiFile(file_path, clip=True)
     print(pygame.midi.get_default_output_id())
 
@@ -57,9 +57,9 @@ def play_music(request):
                 if m.type == 'note_on':
                     print(midi_number_note_map[m.note])
                     sio.emit('pythonToServer', {'note':midi_number_note_map[m.note]})
-                    player.note_on(m.note, m.velocity, m.time)
+                    #player.note_on(m.note, m.velocity, m.time)
                     time.sleep(sleepTimes[i])
-                    player.note_off(m.note, m.velocity, m.time)
+                    #player.note_off(m.note, m.velocity, m.time)
                     i+=1                 
     pygame.quit()
     return HttpResponse(status=204)
