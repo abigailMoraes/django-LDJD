@@ -38,6 +38,7 @@ def play_music(request):
     player = pygame.midi.Output(0)
     player.set_instrument(48, 1)
     mid = mido.MidiFile(file_path, clip=True)
+    print(pygame.midi.get_default_output_id())
 
     sleepTimes = []
 
