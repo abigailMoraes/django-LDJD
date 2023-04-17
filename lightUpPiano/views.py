@@ -56,7 +56,7 @@ def play_music(request):
                 print(m)
                 if m.type == 'note_on':
                     print(midi_number_note_map[m.note])
-                    sio.emit('pythonToServer', {'note':midi_number_note_map[m.note]})
+                    sio.emit('pythonToServer', {'note':midi_number_note_map[m.note], 'time':sleepTimes[i]})
                     #player.note_on(m.note, m.velocity, m.time)
                     time.sleep(sleepTimes[i])
                     #player.note_off(m.note, m.velocity, m.time)
