@@ -11,3 +11,4 @@ python-socketio==5.8.0
 pyserial==3.5
 serial==0.0.97
 requests==2.28.2
+python-socketio[client]==5.8.0
